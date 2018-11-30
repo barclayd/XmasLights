@@ -6,7 +6,7 @@ h2 {
     text-align: center;
     letter-spacing: 0.2em;
     font-size: 4em;
-    text-shadow: 0px 0px 8px rgba(245, 171, 53, 1);
+    text-shadow: 1px 1px 20px rgba(219, 10, 91, 1);
 }
 
 body {
@@ -21,7 +21,7 @@ body {
     padding: 0;
     width: 100%;
     top: -80px;
-    border-bottom: 3px solid #222;
+    border-bottom: 3px solid #696969;
     height: 100px;
 }
 
@@ -42,16 +42,48 @@ body {
     animation-fill-mode: both;
 }
 
+#wire li:nth-child(odd) {
+    animation-name: odd-flash;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+
+#wire li:before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 10px;
+    border-radius: 4px;
+    top: -5px;
+    left: 0px;
+    background-color: #444;
+}
+
 @keyframes even-flash {
+
+    50% {
+        background: rgba(219, 10, 91, 1);
+        box-shadow: 0 2px 20px 4px rgba(219, 10, 91, 1);
+    }
 
     0%,
     100% {
-        background: rgb(255, 230, 65, 1);
-        box-shadow: 0 2px 20px 4px rgba(255, 230, 65, 1);
+        background: rgba(219, 10, 91, 0.5);
+        box-shadow: 0 2px 20px 4px rgba(219, 10, 91, 0.3);
+    }
+}
+
+@keyframes odd-flash {
+
+    0%,
+    100% {
+        background: rgba(30, 130, 76, 1);
+        box-shadow: 0 2px 20px 4px rgba(30, 130, 76, 1)
     }
 
     50% {
-        background: rgb(255, 230, 65, 0.5);
-        box-shadow: 0 2px 20px 4px rgba(255, 230, 65, 0.3);
+        background: rgba(30, 130, 76, 0.5);
+        box-shadow: 0 2px 20px 4px rgba(30, 130, 76, 0.3);
     }
 }
